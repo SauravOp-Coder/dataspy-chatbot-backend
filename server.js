@@ -43,11 +43,9 @@ app.post("/chat", async (req, res) => {
     const reply = chatCompletion.choices[0].message.content;
     res.json({ reply });
   } catch (error) {
-    console.error("OpenAI API Error:", error);
-    res.status(500).json({
-      reply: "Sorry, I encountered an error. Please try again later.",
-    });
-  }
+  console.error("OpenAI API Error:", error.response?.data || error.message || error);
+  res.status(500).json({ reply: "Sorry, I encountered an error. Please try again later." });
+}
 });
 
 // Start server
@@ -55,3 +53,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`✅ Server is running on port ${PORT}`);
 });
+
