@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 // OpenAI initialization
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: sk-8nVsycrSixw_7ZYnTzRx93adaiXu9okf2GECmlkZZKdTcdybWRzMafXycDQpo-COVQDtNjTDthT3BlbkFJG6kOL0hP_1skCOSmRMc2orHPQpL7F6wkOvGe2f990Bf3imFVjp6LQzu5os9GnXE_LVx8II9QAA,
 });
 
 // ✅ GET route for root - so browser shows something when you visit /
@@ -53,4 +53,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`✅ Server is running on port ${PORT}`);
 });
+
 
